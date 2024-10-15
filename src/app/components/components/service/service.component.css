@@ -1,0 +1,53 @@
+/* Initial card size: only showing the image and title */
+.card {
+  width: 300px;
+  height: 200px; /* Show only the image and title */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, height 0.3s ease-in-out;
+  overflow: hidden; /* Hide the rest of the card content */
+  background-color: rgba(0, 0, 0, 0.7); /* Optional: background for title section */
+  color: white; /* Ensure the title and text are visible */
+}
+
+/* When the card is hovered, expand to show full details */
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  height: auto; /* Allow the card to expand */
+}
+
+/* Ensure the card body content transitions smoothly */
+.card-body {
+  height: 100%;
+  overflow: hidden; /* Hide overflowing content */
+  padding: 0.5rem; /* Add some padding */
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* On hover, show the card content */
+.card:hover .card-body {
+  overflow: visible; /* Show all content on hover */
+  opacity: 1;
+}
+
+/* Initial state: hide content except title */
+.card-body .card-text {
+  display: none; /* Hide the card body details initially */
+}
+
+/* Show full content on hover */
+.card:hover .card-body .card-text {
+  display: block; /* Show the content when hovered */
+}
+
+/* Style for the card title */
+.card-title {
+  font-size: 1.25rem;
+  margin-top: 10px;
+}
+
+/* Image at the top of the card */
+.card-img-top {
+  width: 100%;
+  height: 150px;
+  object-fit: cover; /* Ensures the image fills the area */
+}

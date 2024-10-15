@@ -1,0 +1,63 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Container Styling */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Blue color combination for alternating sections */
+div:nth-of-type(odd) {
+    background-color: #e0f7fa;
+}
+
+div:nth-of-type(even) {
+    background-color: #ffffff;
+}
+
+/* Heading Styling */
+h1, h2, h3, h5, h6 {
+    color: #0d47a1;
+}
+
+/* Bullet Points */
+ul, p {
+    margin-bottom: 16px;
+}
+
+/* Custom List Styling */
+ul {
+    padding-left: 20px;
+}
+
+/* Make strong tags stand out */
+strong {
+    color: #0d47a1;
+}
+
+/* Adding border to testimonials */
+blockquote {
+    border-left: 4px solid #0d47a1;
+    padding-left: 16px;
+    margin: 16px 0;
+    font-style: italic;
+    background-color: #e3f2fd;
+}
+
+/* Automatic adjustments for mobile */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    h1, h2, h3, h5, h6 {
+        font-size: 1.2em;
+    }
+}

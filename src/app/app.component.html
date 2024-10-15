@@ -1,117 +1,112 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JP Technologies Dashboard</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body,
-        html {
-            height: 100%;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-        }
-
-        body {
-            padding-top: 56px;
-        }
-
-        .content {
-            flex: 1;
-            padding: 20px;
-        }
-
-        footer {
-            width: 100%;
-            background-color: rgb(102, 98, 102);
-            color: white;
-            padding: 20px 0;
-        }
-
-        .footer-container {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-
-        .footer-form,
-        .footer-contact {
-            flex: 1;
-            padding: 20px;
-            color: white;
-        }
-
-        .footer-contact h5 {
-            margin-bottom: 15px;
-        }
-    </style>
-</head>
-
-<body>
-
-    <!-- Navbar Section -->
-    <nav class="navbar navbar-expand-lg fixed-top" style="background-color: rgb(126, 98, 126);">
-        <div class="container-fluid">
-            <a class="navbar-brand" routerLink="/home">
-                <img src="../../../assets/imgs/JP-TECH-LOGO.jpeg" alt="Logo" width="30" height="30">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" routerLink="/home"  (click)="toHome()">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" routerLink="/service" (click)="toService()" >Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" routerLink="/aboutus"  (click)="toAboutus()" >About us</a>
-                    </li>
-                </ul>
-            </div>
+<!-- Navbar Section -->
+<nav class="navbar navbar-expand-lg fixed-top" style="background-color: rgb(82, 166, 235);">
+    <div class="container-fluid">
+        <a class="navbar-brand" routerLink="/home">
+            <img src="../../../assets/imgs/JP-TECH-LOGO.jpeg" alt="Logo" width="30" height="30">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link text-white" routerLink="/home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" routerLink="/service">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" routerLink="/aboutus">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" routerLink="/career">Career</a>
+              </li>
+            </ul>
         </div>
-    </nav>
-
-
-    <!-- Content Section -->
-    <div class="content">
-        <router-outlet></router-outlet> 
     </div>
+</nav>
 
-    <!-- Footer Section -->
-    <footer>
-        <div class="container footer-container">
-            <div class="footer-form">
-                <h5>Reach Out to Learn More</h5>
-                <form>
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="name" placeholder="Enter your name">
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="email" placeholder="Enter your email">
-                    </div>
-                    <div class="mb-3">
-                        <label for="message" class="form-label">Message</label>
-                        <textarea class="form-control" id="message" rows="3"
-                            placeholder="Enter your message"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-light">Submit</button>
-                </form>
+<!-- Main Content Section -->
+<!-- <div class="content">
+    <router-outlet></router-outlet>
+</div> -->
+
+<div>
+<router-outlet></router-outlet>
+</div>
+
+<!-- Footer Section -->
+<footer>
+    <div class="container footer-container" [formGroup]="form">
+      <div class="footer-form">
+        <h5>Reach Out to Learn More</h5>
+        <form action="javascript:void(0)" (submit)="send()">
+
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter your name" formControlName="from_name">
+            <div *ngIf="form.get('from_name')?.invalid && form.get('from_name')?.touched" class="text-danger">
+              Name is required.
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter your email" formControlName="from_email">
+            <div *ngIf="form.get('from_email')?.invalid && form.get('from_email')?.touched" class="text-danger">
+              <div *ngIf="form.get('from_email')?.errors?.['required']">Email is required.</div>
+              <div *ngIf="form.get('from_email')?.errors?.['email']">Invalid email format.</div>
+            </div>
+          </div>
+
+
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone Number </label>
+            <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" formControlName="from_phone">
+            <div *ngIf="form.get('from_phone')?.touched && form.get('from_phone')?.invalid" class="text-danger">
+              <div *ngIf="form.get('from_phone')?.errors?.['pattern']">Invalid phone number format.</div>
+            </div>
             </div>
 
-            <div class="footer-contact">
-                <h5>Contact Us</h5>
-                <p><strong>Address:</strong> Yerwada, Pune-411006</p>
-                <p><strong>Email:</strong> kishorkambleofficial0110gmail.com</p>
-                <p><strong>LinkedIn:</strong> <a href="#" class="text-light">LinkedIn Profile</a></p>
+          <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" rows="3" placeholder="Enter your message" formControlName="message"></textarea>
+            <div *ngIf="form.get('message')?.invalid && form.get('message')?.touched" class="text-danger">
+              Message is required.
             </div>
-        </div>
-    </footer>
+          </div>
+          <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Submit</button>
+        </form>
+      </div>
+  
+      <!-- <div class="footer-contact">
+        <h5>Contact Us</h5>
+        <p><strong>Address:</strong> Yerwada, Pune-411006</p>
+        <p><strong>Email:</strong> kishorkambleofficial0110&#64;gmail.com</p>
+        <p><strong>LinkedIn:</strong> <a href="#" class="text-light">LinkedIn Profile</a></p>
+      </div> -->
+
+
+      <div class="footer-contact">
+        <h5>Contact Us</h5>
+        <p><strong>Contact:</strong> 7030914122</p>
+        <p><strong>Email:</strong> contact-us&#64;jptechnologie.com</p>
+        <p><strong>Instagram:</strong> 
+          <a href="https://www.linkedin.com/yourprofile" target="_blank" class="text-light">
+              <img src="../../../assets/imgs/linkedin.png" alt="Instagram Logo" style="width: 20px; height: 20px; vertical-align: middle;">
+          </a>
+      </p>
+
+        <p><strong>Instagram:</strong> 
+            <a href="https://www.instagram.com/yourprofile" target="_blank" class="text-light">
+                <img src="../../../assets/imgs/instagram.png" alt="Instagram Logo" style="width: 20px; height: 20px; vertical-align: middle;">
+            </a>
+        </p>
+    </div>
+    
+
+    </div>
+  </footer>
+  
+
