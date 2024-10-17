@@ -54,7 +54,8 @@ form: FormGroup = this.fb.group({
   message: ['', Validators.required], 
 });
 
-constructor(private fb: FormBuilder) {}
+constructor(private fb: FormBuilder) {} 
+
 
 async send() {
   emailjs.init('_A2IhqMJIUyQbtfaU');

@@ -1,42 +1,29 @@
-/* Initial card size: only showing the image and title */
+/* Updated card styling */
 .card {
   width: 300px;
-  height: 200px; /* Show only the image and title */
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, height 0.3s ease-in-out;
-  overflow: hidden; /* Hide the rest of the card content */
+  height: auto; /* Allow full size for card */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  overflow: hidden; /* Hide any overflow */
   background-color: rgba(0, 0, 0, 0.7); /* Optional: background for title section */
   color: white; /* Ensure the title and text are visible */
 }
 
-/* When the card is hovered, expand to show full details */
+/* Remove hover effect */
 .card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  height: auto; /* Allow the card to expand */
+  transform: none;
+  box-shadow: none;
 }
 
-/* Ensure the card body content transitions smoothly */
+/* Card body */
 .card-body {
-  height: 100%;
-  overflow: hidden; /* Hide overflowing content */
-  padding: 0.5rem; /* Add some padding */
-  transition: opacity 0.3s ease-in-out;
+  height: auto; /* Allow the full content to be displayed */
+  overflow: visible; /* Ensure all content is visible */
+  padding: 0.5rem;
 }
 
-/* On hover, show the card content */
-.card:hover .card-body {
-  overflow: visible; /* Show all content on hover */
-  opacity: 1;
-}
-
-/* Initial state: hide content except title */
+/* Display the content by default */
 .card-body .card-text {
-  display: none; /* Hide the card body details initially */
-}
-
-/* Show full content on hover */
-.card:hover .card-body .card-text {
-  display: block; /* Show the content when hovered */
+  display: block;
 }
 
 /* Style for the card title */
@@ -49,5 +36,14 @@
 .card-img-top {
   width: 100%;
   height: 150px;
-  object-fit: cover; /* Ensures the image fills the area */
+  object-fit: cover;
+}
+
+/* Updated section styling */
+#service-section {
+  background-color: #accdec; /* Blue background */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 30px 0;
 }
