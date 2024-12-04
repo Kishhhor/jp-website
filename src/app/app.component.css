@@ -1,24 +1,51 @@
-html {
-    scroll-behavior: smooth;
-}
-
+/* Remove all scrollbars */
 body,
 html {
     height: 100%;
     margin: 0;
     display: flex;
     flex-direction: column;
+    overflow: hidden; /* Hides the scroll bar */
 }
 
 body {
-    padding-top: 56px;
+    padding-top: 56px; /* Adjusted for navbar height */
 }
 
+/* Navbar Styles */
+.custom-navbar {
+    background-color: rgb(36, 38, 173); /* Fixed sky blue background color */
+    font-family: "Georgia", Sans-serif;
+    font-size: 16px;
+}
+
+.navbar-toggler {
+    border-color: transparent;
+}
+
+.nav-link {
+    color:white;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: black;
+}
+
+.nav-link.active {
+    font-weight: bold;
+    text-decoration: underline;
+    color: rgb(0, 123, 255);
+}
+
+
+/* Main content styles */
 .content {
     flex: 1;
     padding: 20px;
 }
 
+/* Footer Styles */
 footer {
     width: 100%;
     background-color: rgb(54, 53, 54);
@@ -42,3 +69,57 @@ footer {
 .footer-contact h5 {
     margin-bottom: 15px;
 }
+
+.social-links {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    gap: 15px;
+}
+
+.footer-sections {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.footer-services,
+.footer-industries {
+    flex: 1;
+}
+
+.footer-services ul,
+.footer-industries ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer-services li,
+.footer-industries li {
+    margin-bottom: 5px;
+}
+
+.footer-services h5,
+.footer-industries h5 {
+    text-decoration: underline;
+}
+
+/* Footer Link Styles */
+.footer-services a,
+.footer-industries a {
+    color: #ffffff; /* White color for the links */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease;
+}
+
+.footer-services a:hover,
+.footer-industries a:hover {
+    color: #b8b6b6; /* Light grey on hover */
+    text-decoration: underline;
+}
+
+
+
+
+
+

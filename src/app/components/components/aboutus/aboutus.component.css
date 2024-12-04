@@ -1,0 +1,280 @@
+/* General Styles */
+
+.abtimage{
+    width: 100%;
+    height: 450px;
+}
+
+.hover-effect {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.hover-effect:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 350px;
+    width: 100%;
+}
+
+.icon-img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.head2 {
+    font-family: "Georgia", Sans-serif;
+    font-size: 34px;
+    font-weight: 850;
+    margin-bottom: 30px;
+    color: #343F5A;
+     text-align: center;
+}
+
+.pstyle {
+    font-family: "Georgia", Sans-serif;
+    font-weight: 60;
+    font-size: 18px;
+         margin-left: 20px;
+        margin-right: 20px;
+        text-align: center;
+}
+
+.head1 {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 60px;
+    font-weight: 600;
+    color: rgb(255, 244, 224);
+    text-decoration: underline;
+    text-shadow: rgb(83, 56, 19) 4px 2px 0px;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .about-us-image img {
+        height: 450px;
+    }
+
+    .head1 {
+        font-size: 48px;
+    }
+
+    .head2 {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .pstyle {
+        font-size: 18px;
+        margin-left: 20px;
+        margin-right: 20px;
+        text-align: center;
+    }
+
+    .card {
+        height: 470px; /* Increased height to fit all content comfortably */
+        width: 100%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    /* Ensure card-body flexes to place content in the center */
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    /* Position the 'Read More' link at the bottom */
+    .card-link {
+        margin-top: auto; /* Pushes link to the bottom of the card */
+        padding-top: 10px;
+    }
+
+
+
+
+    .row.text-center .col-md-6 {
+        flex: 0 0 33.33%; /* Three cards in a row */
+        max-width: 33.33%;
+    }
+
+    /* Center single card on the next row */
+    .row.text-center .col-md-6:nth-child(4) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .icon-img{
+        width: 50px;
+        height: 50px;
+        margin-bottom: 10px;
+        margin-left: 50px;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+    .abtimage{
+        width: 100%;
+        height: 400px;
+    }
+    
+
+    .head1 {
+        font-size: 36px;
+    }
+
+    .head2 {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .pstyle {
+        font-size: 16px;
+        margin-left: 20px;
+        margin-right: 20px;
+        text-align: center;
+    }
+
+    /* Two cards per row with spacing between rows */
+    .row.text-center .col-md-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+        margin-bottom: 20px; /* Space between rows */
+    }
+
+    .card {
+        height: 350px; /* Increased height to fit all content comfortably */
+        width: 100%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    /* Ensure card-body flexes to place content in the center */
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    /* Position the 'Read More' link at the bottom */
+    .card-link {
+        margin-top: auto; /* Pushes link to the bottom of the card */
+        padding-top: 10px;
+    }
+
+    /* Add margin to separate rows of cards */
+    .row.text-center .col-md-6 {
+        margin-bottom: 20px;
+    }
+
+    .icon-img{
+        width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    margin-left: 100px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+    .abtimage{
+        width: 100%;
+        height: 300px;
+    }
+    
+
+    .head1 {
+        font-size: 36px;
+    }
+
+    .head2 {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .pstyle {
+        font-size: 14px;
+        margin-left: 20px;
+        margin-right: 20px;
+        text-align: center;
+    }
+
+    /* Two cards per row with spacing between rows */
+    .row.text-center .col-md-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+        margin-bottom: 20px; /* Space between rows */
+    }
+
+    .card {
+        height: 450px; /* Increased height to fit all content comfortably */
+        width: 100%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    /* Ensure card-body flexes to place content in the center */
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    /* Position the 'Read More' link at the bottom */
+    .card-link {
+        margin-top: auto; /* Pushes link to the bottom of the card */
+        padding-top: 10px;
+    }
+
+    /* Add margin to separate rows of cards */
+    .row.text-center .col-md-6 {
+        margin-bottom: 20px;
+    }
+
+    .icon-img{
+        width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    margin-left: 50px;
+    }
+}

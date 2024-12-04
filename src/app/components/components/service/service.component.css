@@ -10,8 +10,8 @@
 
 /* Remove hover effect */
 .card:hover {
-  transform: none;
-  box-shadow: none;
+  transform: translateY(-10px); /* Move the card up */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 1); /* Add a shadow effect */
 }
 
 /* Card body */
@@ -19,17 +19,15 @@
   height: auto; /* Allow the full content to be displayed */
   overflow: visible; /* Ensure all content is visible */
   padding: 0.5rem;
-}
-
-/* Display the content by default */
-.card-body .card-text {
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Style for the card title */
 .card-title {
   font-size: 1.25rem;
   margin-top: 10px;
+  text-align: center;
 }
 
 /* Image at the top of the card */
@@ -46,4 +44,186 @@
   background-position: center;
   color: white;
   padding: 30px 0;
+}
+
+/* Ensure the button stays at the bottom of the card */
+.btn.mt-auto {
+  margin-top: auto;
+}
+
+.list-unstyled{
+  color: #424242;
+  font-family: "Georgia", Sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.pstyle{
+  color: #252525;
+  font-family: "Georgia", Sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.marginspace{
+  margin-top: 50px;
+}
+
+
+/* Responsive Design for Tablets and Smaller Screens */
+@media (max-width: 1024px) {
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .card {
+    margin-bottom: 20px;
+  }
+
+  .why-choose-us {
+    padding: 2rem 1rem;
+  }
+
+  .list-unstyled {
+    font-size: 15px;
+  }
+
+  .pstyle {
+    font-size: 15px;
+  }
+}
+
+/* General Styling for Cards */
+.card {
+  width: 300px;
+  height: auto;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+}
+
+.card-body {
+  height: auto;
+  overflow: visible;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.btn.mt-auto {
+  margin-top: auto;
+}
+
+.list-unstyled {
+  color: #424242;
+  font-family: "Georgia", Sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.pstyle {
+  color: #252525;
+  font-family: "Georgia", Sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+}
+
+
+
+@media (max-width: 768px) {
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .col-md-4 {
+    flex: 0 0 48%; /* Two cards per row */
+    max-width: 48%;
+    margin-bottom: 20px; /* Top margin between rows */
+  }
+
+  .container {
+    padding: 0;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
+
+  .why-choose-us h1 {
+    font-size: 35px;
+  }
+
+  .list-unstyled {
+    font-size: 14px;
+  }
+
+  .pstyle {
+    font-size: 14px;
+  }
+
+  .pstyle,.list-unstyled{
+    margin-left: 70px;
+    margin-right: 70px;
+  }
+
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 480px) {
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .col-md-4 {
+    flex: 0 0 48%; /* Two cards per row */
+    max-width: 48%;
+    margin-bottom: 15px; /* Top margin between rows */
+  }
+
+  .card-title {
+    font-size: 1rem;
+  }
+
+  .card-img-top {
+    height: 100px;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+
+  .why-choose-us h1 {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  .list-unstyled {
+    font-size: 13px;
+  }
+
+  .pstyle {
+    font-size: 13px;
+  }
+
+  .btn.mt-auto {
+    font-size: 14px;
+  }
 }
