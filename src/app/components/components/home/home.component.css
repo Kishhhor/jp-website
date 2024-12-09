@@ -1,15 +1,13 @@
 
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-.bodybg{
+
+/* General styles */
+.bodybg {
     width: 100%;
     height: 100%;
     font-family: Arial, sans-serif;
+    overflow: hidden;
 }
 
 .slideshow-container {
@@ -26,7 +24,7 @@
     background-position: center;
     background-size: cover;
     opacity: 0;
-    animation: fadeEffect ease 30s infinite; 
+    animation: fadeEffect ease 30s infinite;
 }
 
 .slide1 { background-image: url('/assets/imgs/HomeAIBG1.jpg'); animation-delay: 0s; }
@@ -56,19 +54,9 @@
     margin-bottom: 20px;
 }
 
-
-
-  @keyframes fadeEffect {
-    0%, 16.67% { opacity: 1; }
-    33.34%, 100% { opacity: 0; }
-}  
-
-
-/* learn more button */
-
 .learn-more-button {
     background-color: transparent;
-    color:white;
+    color: white;
     border: 2px solid white;
     padding: 10px 20px;
     font-size: 16px;
@@ -78,207 +66,240 @@
     margin-top: 20px;
 }
 
-
-
-.learn-more-button:hover{
+.learn-more-button:hover {
     background-color: skyblue;
     color: black;
 }
 
-
-
-
-
-.testimonial-slide {
-    animation: slideAnimation 40s infinite;
+@keyframes fadeEffect {
+    0%, 16.67% { opacity: 1; }
+    33.34%, 100% { opacity: 0; }
 }
 
-
-                 /* next to home animation shuffle image  */
-
-/* Basic styling */
-.bodycard {
-    font-family: Arial, sans-serif;
-    background-color: #f6fcff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+/* Text animation with blue background image */
+.bodytext {
     margin: 0;
+    padding: 0;
+    color: #FFFFFF;
+    font-family: "Georgia", Sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 25px;
 }
 
-/* Card container styling */
-.card-container {
+/* Background section styling */
+.background-section {
+    position: relative;
+    height: 30vh;
+    background: url('/assets/imgs/BlueBG.jpg') no-repeat center center/cover;
     display: flex;
-    gap: 20px;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Card styling */
-.card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+/* Content styling */
+.content {
+    color: #fff;
     padding: 20px;
-    width: 300px;
-    text-align: center;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-/* Logo styling */
-.card-logo {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
-    margin-bottom: 15px;
-    display: block; 
-    margin-left: auto; 
-    margin-right: auto;
-    
-}
-
-/* Card hover animation */
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* Title styling */
-.card h3 {
-    font-size: 1.2em;
-    margin: 10px 0;
-
-}
-
-/* Description styling */
-.card p {
-    font-size: 0.95em;
-    color: #555;
-}
-  
-
- /* text animation with blue background image  */
-
-                  .bodytext {
-                    /* font-family: Arial, sans-serif;
-                    background-color: #f0f0f0; */
-                    margin: 0;
-                    padding: 0;
-                    
-                    color: #FFFFFF;
-                    font-family: "Georgia", Sans-serif;
-                    font-size: 16px;
-                    font-weight: 300;
-                    line-height: 25px;
-                }
-                
-                /* Background section styling */
-                .background-section {
-                    position: relative;
-                    height: 30vh;  
-                    background: url('/assets/imgs/BlueBG.jpg') no-repeat center center/cover;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                }
-                
-                /* Content styling */
-                .content {
-                    color: #fff;
-                    padding: 20px;
-                    border-radius: 8px;
-                    text-align: center;
-                }
-                
-                /* Animation for h2 sliding in from the right */
-                h2 {
-                    opacity: 0; /* Start hidden */
-                    transform: translateX(100%); /* Start from the right */
-                    animation: slideInFromRight 2s forwards;
-                    animation-delay: 1s;
-                }
-                
-                /* Slide-in from right animation */
-                @keyframes slideInFromRight {
-                    to {
-                        opacity: 1;
-                        transform: translateX(0);
-                    }
-                }
-                
-              
-
-                /* Add animation on scroll */
-                .background-section {
-                    animation: fadeInUpOnScroll 1s forwards;
-                    opacity: 0;
-                }
-                
-                /* Animation scrolling in */
-                @keyframes fadeInUpOnScroll {
-                    from {
-                        opacity: 0;
-                        transform: translateY(20px);
-                    }
-                    to {
-                        opacity: 1;
-                        transform: translateY(0);
-                    }
-                }
-                
-    
-
-
-
-/* client images page   */
-
-
-/* Image row styling */
-.image-row {
-    display: flex;
-    justify-content: space-between;
-    padding:20px;
-    background-color: #fff; /* White background */
     border-radius: 8px;
-    margin-left: 80px;
-    margin-right: 80px;
-    
+    text-align: center;
 }
+
+/* Animation for h2 sliding in from the right */
+h2 {
+    opacity: 0; 
+    transform: translateX(100%);
+    animation: slideInFromRight 2s forwards;
+    animation-delay: 1s;
+}
+
+@keyframes slideInFromRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Add animation on scroll */
+.background-section {
+    animation: fadeInUpOnScroll 1s forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInUpOnScroll {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ----- Catchphrase Cards ----- */
+.image-gallery11 {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 50px auto;
+    background-color: #f6fcff;
+    max-width: 1400px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .image-item11 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: nowrap;
+  }
+  
+  .image-container11 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .image-container11 img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .image-title11 {
+    font-family: "Georgia", Sans-serif;
+    font-size: 34px;
+    font-weight: 850;
+    color: rgb(3, 55, 75);
+    margin-top: 10px;
+    text-decoration: underline;
+    text-decoration-color: rgb(3, 55, 75);
+  }
+  
+  .image-quote11 {
+    font-family: "Georgia", Sans-serif;
+    font-weight: 300;
+    color: rgb(3, 55, 75);
+    font-size: 30px;
+    max-width: 450px;
+    text-align: center;
+  }
+
+
+
+
+        /* 3 cards hover  */
+        .bodycard {
+            font-family: Arial, sans-serif;
+            background-color: #f6fcff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            margin: 0;
+        }
+        
+        /* Card container styling */
+        .card-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: nowrap; /* Prevent wrapping for smaller screens */
+            overflow-x: auto; /* Enable horizontal scrolling for small screens */
+            scrollbar-width: none; /* Hide scrollbar in Firefox */
+        }
+        
+        .card-container::-webkit-scrollbar {
+            display: none; /* Hide scrollbar in WebKit browsers */
+        }
+        
+        /* Card styling */
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            flex-shrink: 0; /* Prevent cards from shrinking */
+        }
+        
+        /* Logo styling */
+        .card-logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 15px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Card hover animation */
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Title styling */
+        .card h3 {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        
+        /* Description styling */
+        .card p {
+            font-size: 0.95em;
+            color: #555;
+        }
+
+
+
 
 /* Image styling */
 
-.exptext{
-    /* display: flex;
-   
-   justify-content: center; 
-   
-    font-family: emoji; */
+.exptext {
     text-align: center;
     margin-top: 70px;
-    
     color: #343F5A;
     font-family: "Georgia", Sans-serif;
     font-size: 36px;
     font-weight: 500;
     line-height: 1.3em;
-  
+}
+
+/* Image row styling */
+.image-row {
+    display: flex; /* Flex layout to keep images in a row */
+    justify-content: space-between; /* Space between images */
+    align-items: center; /* Center the images vertically */
+    gap: 50px; /* Space between images */
 }
 
 .image-row a {
     display: block;
-    width: 22%; /* Four images with spacing */
+    width: calc(100% / 3 - 20px); /* Divide space for 3 images with a gap */
     text-align: center;
     transition: transform 0.3s;
-    
 }
 
 .image-row img {
-    width: 100%;
+    width: 80%;
     height: auto;
     border-radius: 8px;
     box-shadow: 0 12px 16px rgba(0, 0, 0, 0.1);
-    margin-top: 10px;
-    
+    margin-top: 30px;
+    /* margin-bottom: 40px; */
+    margin-right: 70px;
+    margin-left: 40px;
 }
 
 /* Hover effect */
@@ -287,34 +308,7 @@
 }
 
 
-/* Testimonials section styling */
-.testimonials-section {
-    text-align: center;
-    margin: 40px auto;
-    max-width: 800px;
-    padding: 20px;
-    margin-top: 10px;
-}
 
-/* Styling for h5 and h2 */
-.testimonials-section h5 {
-    margin-bottom: 30px;
-    margin-top: 40px;
-    color: rgb(42, 42, 223);
-    font-family: "Poppins", Sans-serif;
-    font-size: 20px;
-    font-weight: 750;
-    text-transform: uppercase;
-    letter-spacing: 0.9px;
-}
-
-.testimonials-section h2 {
-    color: #343F5A;
-    font-family: "Georgia", Sans-serif;
-    font-size: 40px;
-    font-weight: 500;
-    line-height: 1.3em;
-}
 
 
 
@@ -441,85 +435,280 @@
 
 
 
-  /* -----  catche frase cards ----   */
 
-  .image-gallery11 {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    margin-left: 50px;
-    margin-top: 50px;
-    background-color: #f6fcff;
-}
-
-.image-item11 {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    position: relative;
-}
-
-/* Target the first (Empower) and third (Excel) items to place the image on the right */
-.image-item11:nth-child(1),
-.image-item11:nth-child(3) {
-    flex-direction: row-reverse; /* Reverse the order: quote on the left, image on the right */
-}
-
-/* The second item (Elevate) will have the default order: image on the left, quote on the right */
-.image-item11:nth-child(2) {
-    flex-direction: row;
   
+
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+    .slideshow-container {
+        height: 75vh;
+    }
+    .slide {
+        height: 75vh;
+    }
+    .text-content h1 {
+        font-size: 2rem;
+    }
+    .background-section {
+        height: 25vh;
+    }
+    .image-item11 {
+    flex-wrap: wrap;
+  }
+  .image-container11 img {
+    max-width: 350px;
+  }
+  .image-quote11{
+    font-size: 26px;
+  }
 }
 
 
-.image-container11 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
 
-.image-container11 img {
-    width: 400px; /* Adjust the size of the image */
-    height: auto;
-    border-radius: 10px;
-    /* box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2); */
-}
 
-.image-title11 {
-    /* font-family: 'Courier New', Courier, monospace; */
-    font-family: "Georgia", Sans-serif;
-    font-size: 34px;
-    font-weight: 850;
-    color: rgb(3, 55, 75);
-    margin-top: 10px;
-    /* text-decoration: underline; */
-    text-decoration-color: rgb(3, 55, 75); /* Optional: Change underline color to match text */
-    text-decoration-thickness: 2px; /* Optional: Set the thickness of the underline */
-}
+@media (max-width: 768px) {
+    .slideshow-container {
+      height: 60vh;
+    }
+    .text-content h1 {
+      font-size: 1.8rem;
+    }
+    .background-section {
+      height: 20vh;
+    }
+    
+    .image-gallery11 {
+      gap: 20px;
+      padding: 10px;
+    }
+    
+    .image-item11 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: nowrap;
+    }
+  
+    /* First and third item: quote center, image right */
+    .image-item11:nth-child(1) .image-quote11,
+    .image-item11:nth-child(3) .image-quote11 {
+      width: 50%;
+      text-align: center;
+      font-size: 22px;
+    }
+  
+    .image-item11:nth-child(1) .image-container11,
+    .image-item11:nth-child(3) .image-container11 {
+      width: 50%;
+      text-align: right;
+    }
+  
+    /* Second item: quote left, image center */
+    .image-item11:nth-child(2) {
+      flex-direction: row;
+    }
+  
+    .image-item11:nth-child(2) .image-quote11 {
+      width: 50%;
+      text-align: left;
+      font-size: 22px;
+    }
+  
+    .image-item11:nth-child(2) .image-container11 {
+      width: 50%;
+      text-align: center;
+    }
+  
+    .image-container11 img {
+      max-width: 300px;
+      height: auto;
+    }
+  
+    .image-title11 {
+      font-size: 22px;
+      margin-top: 10px;
+    }
 
-.image-quote11 {
-    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
-    font-family: "Georgia", Sans-serif;
-    font-weight: 300;
-    color: rgb(3, 55, 75);
-    padding: 10px;
-    font-size: 30px;
-    border-radius: 20px;
-    max-width: 450px;
 
-                    /* color: #FFFFFF;
-                    font-family: "Georgia", Sans-serif;
-                    font-size: 16px;
-                    font-weight: 300;
-                    line-height: 25px; */
-}
 
-/* Hover effect for testimonial content */
-.testimonial-content:hover {
-    box-shadow: 0 18px 24px rgba(0, 0, 0, 0.2); /* Increase shadow intensity */
-    transform: scale(1.02); /* Slightly scale up the content */
-    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for effects */
-}
+    .card-container {
+        gap: 15px; /* Reduce gap between cards */
+        padding: 10px;
+    }
 
+    .card {
+        width: 220px; /* Slightly reduce card width */
+    }
+
+    .card-logo {
+        width: 70px;
+        height: 70px;
+    }
+
+    .card h3 {
+        font-size: 1.1em;
+    }
+
+    .card p {
+        font-size: 0.9em;
+    }
+
+    .image-row {
+        gap: 10px; /* Reduce the gap between images */
+        max-width: 720px
+    }
+
+    .image-row a {
+        width: calc(100% / 3 - 10px); /* Adjust width for 3 images */
+    }
+
+
+    .testimonials-section h2 {
+        font-size: 32px; /* Reduced font size */
+    }
+
+    .testimonial-content {
+        width: 100%; /* Full width on tablets */
+        height: 130px;
+        padding: 20px;
+    }
+
+    .testimonial-slide {
+        font-size: 15px; /* Adjust font size for better readability */
+        padding: 0 15px; /* Less padding for smaller screens */
+    }
+
+    .testimonials-section h5 {
+        font-size: 18px; /* Slightly smaller heading */
+    }
+
+  }
+  
+
+
+@media (max-width: 480px) {
+    .slideshow-container {
+      height: 50vh;
+    }
+    .text-content h1 {
+      font-size: 1.5rem;
+    }
+    .background-section {
+      height: 15vh;
+    }
+    
+    .bodytext h2{
+        font-size: 20px;
+    }
+    .image-item11 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: nowrap;
+      margin-bottom: 30px;
+    }
+  
+    /* First and third item: quote center, image right */
+    .image-item11:nth-child(1) .image-quote11,
+    .image-item11:nth-child(3) .image-quote11 {
+      width: 50%;
+      text-align: center;
+      font-size: 20px;
+    }
+  
+    .image-item11:nth-child(1) .image-container11,
+    .image-item11:nth-child(3) .image-container11 {
+      width: 50%;
+      text-align: right;
+    }
+       
+    /* Second item: quote left, image center */
+    .image-item11:nth-child(2) {
+      flex-direction: row;
+    }
+  
+    .image-item11:nth-child(2) .image-quote11 {
+      width: 50%;
+      text-align: left;
+      font-size: 20px;
+    }
+  
+    .image-item11:nth-child(2) .image-container11 {
+      width: 50%;
+      text-align: center;
+    }
+  
+    .image-container11 img {
+      max-width: 150px;
+      height: auto;
+    }
+  
+    .image-title11 {
+      font-size: 20px;
+      margin-top: 5px;
+    }
+
+
+
+    .card-container {
+        gap: 10px; /* Further reduce gap between cards */
+        padding: 5px;
+    }
+
+    /* .card {
+        width: 220px;   Adjust card width for smaller screens 
+    } */
+     .card{
+        width: 140px;
+     }
+
+    .card-logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .card h3 {
+        font-size: 1em;
+    }
+
+    .card p {
+        font-size: 0.85em;
+    }
+
+    .image-row {
+        gap: 20px;
+        max-width: 400px;
+    }
+
+    .image-row a {
+        width: calc(100% / 3 - 5px); /* Adjust width for 3 images */
+    }
+
+
+
+    .testimonials-section h2 {
+        font-size: 28px; /* Reduce font size for smaller screens */
+    }
+
+    .testimonial-content {
+        width: 100%; /* Full width on mobile */
+        height: 120px; /* Auto height to accommodate all content */
+        padding: 15px;
+        border-radius: 8px; /* Smaller border radius for mobile */
+        margin-top: 10px;
+    }
+
+    .testimonial-slide {
+        font-size: 11px; /* Smaller font size for mobile */
+        padding: 0 10px; /* Reduce padding */
+    }
+
+    .testimonials-section h5 {
+        font-size: 16px; /* Smaller heading for better layout */
+    }
+  }
+  
 
